@@ -1,12 +1,25 @@
 <template>
-  <div id="app">
-    <div id="nav">
+  <div class="app">
+    <global-header />
+    <nav class="nav">
       <router-link to="/">Home</router-link> |
       <router-link to="/about">About</router-link>
-    </div>
+    </nav>
     <router-view />
   </div>
 </template>
+
+<script lang="ts">
+import { Component, Vue } from "vue-property-decorator";
+import GlobalHeader from "@/views/Header.vue";
+
+@Component({
+  components: {
+    GlobalHeader
+  }
+})
+export default class App extends Vue {}
+</script>
 
 <style lang="scss">
 #app {
